@@ -76,7 +76,7 @@ void cloud_callback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
 {
   // PCL still uses boost::shared_ptr internally
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud =
-    boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+    std::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
   // This will convert the message into a pcl::PointCloud
   pcl::fromROSMsg(*msg, *cloud);
